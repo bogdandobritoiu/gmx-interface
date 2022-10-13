@@ -8,8 +8,16 @@ import "./Modal.css";
 import useLockBodyScroll, { TOUCH_MOVE_CONTAINER_CLASS_NAME } from "lib/useLockBodyScroll";
 
 export default function Modal(props) {
-  const { isVisible, setIsVisible, className, zIndex, onAfterOpen, disableBodyScrollLock, allowContentTouchMove } =
-    props;
+  const {
+    isVisible,
+    setIsVisible,
+    className,
+    image,
+    zIndex,
+    onAfterOpen,
+    disableBodyScrollLock,
+    allowContentTouchMove,
+  } = props;
 
   const modalRef = useRef(null);
 
@@ -58,13 +66,23 @@ export default function Modal(props) {
             onClick={() => setIsVisible(false)}
           ></div>
           <div className="Modal-content">
-            <div className="Modal-title-bar">
-              <div className="Modal-title">{props.label}</div>
-              <div className="Modal-close-button" onClick={() => setIsVisible(false)}>
-                <MdClose fontSize={20} className="Modal-close-icon" />
+            {image ? (
+              <div className="Modal-image">
+                <img src={image} />
+                <div className="Modal-close-button" onClick={() => setIsVisible(false)}>
+                  <MdClose size={24} className="Modal-close-icon" />
+                </div>
               </div>
-            </div>
-            <div className="divider" />
+            ) : (
+              <div className="Modal-title-bar">
+                <div className="Modal-title">{props.label}</div>
+                <div className="Modal-close-button" onClick={() => setIsVisible(false)}>
+                  <MdClose size={24} className="Modal-close-icon" />
+                </div>
+              </div>
+            )}
+
+            {/* <div className="divider" /> */}
             <div className={cx("Modal-body", TOUCH_MOVE_CONTAINER_CLASS_NAME)} ref={modalRef}>
               {props.children}
             </div>

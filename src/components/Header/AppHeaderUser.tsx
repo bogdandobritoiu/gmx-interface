@@ -81,7 +81,7 @@ export function AppHeaderUser({
   if (!active) {
     return (
       <div className="App-header-user">
-        <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>
+        {/* <div className={cx("App-header-trade-link", { "homepage-header": isHomeSite() })}>
           <HeaderLink
             className="default-btn"
             to="/trade"
@@ -90,7 +90,7 @@ export function AppHeaderUser({
           >
             <Trans>Trade</Trans>
           </HeaderLink>
-        </div>
+        </div> */}
 
         {showConnectionOptions ? (
           <>
@@ -116,7 +116,7 @@ export function AppHeaderUser({
 
   return (
     <div className="App-header-user">
-      <div className="App-header-trade-link">
+      {/* <div className="App-header-trade-link">
         <HeaderLink
           className="default-btn"
           to="/trade"
@@ -125,7 +125,7 @@ export function AppHeaderUser({
         >
           <Trans>Trade</Trans>
         </HeaderLink>
-      </div>
+      </div> */}
 
       {showConnectionOptions ? (
         <>

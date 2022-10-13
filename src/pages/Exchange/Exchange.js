@@ -50,6 +50,8 @@ import { getTokenInfo } from "domain/tokens/utils";
 import { bigNumberify, formatAmount } from "lib/numbers";
 import { getToken, getTokenBySymbol, getTokens, getWhitelistedTokens } from "config/tokens";
 import { useChainId } from "lib/chains";
+import { Link } from "react-router-dom";
+import { ExchangeLinks } from "./ExchangeLinks";
 const { AddressZero } = ethers.constants;
 
 const PENDING_POSITION_VALID_DURATION = 600 * 1000;
@@ -812,15 +814,15 @@ export const Exchange = forwardRef((props, ref) => {
     return (
       <div>
         <div className="Exchange-list-tab-container">
-          <Tab
+          {/* <Tab
             options={LIST_SECTIONS}
             optionLabels={LIST_SECTIONS_LABELS}
             option={listSection}
             onChange={(section) => setListSection(section)}
             type="inline"
             className="Exchange-list-tabs"
-          />
-          <div className="align-right Exchange-should-show-position-lines">
+          /> */}
+          {/* <div className="align-right Exchange-should-show-position-lines">
             {renderCancelOrderButton()}
             <Checkbox
               isChecked={savedShouldShowPositionLines}
@@ -831,7 +833,7 @@ export const Exchange = forwardRef((props, ref) => {
                 <Trans>Chart positions</Trans>
               </span>
             </Checkbox>
-          </div>
+          </div> */}
         </div>
         {listSection === "Positions" && (
           <PositionsList
@@ -925,70 +927,75 @@ export const Exchange = forwardRef((props, ref) => {
   };
 
   return (
-    <div className="Exchange page-layout">
-      {showBanner && <ExchangeBanner hideBanner={hideBanner} />}
-      <div className="Exchange-content">
-        <div className="Exchange-left">
-          {renderChart()}
-          <div className="Exchange-lists large">{getListSection()}</div>
-        </div>
-        <div className="Exchange-right">
-          <SwapBox
-            pendingPositions={pendingPositions}
-            setPendingPositions={setPendingPositions}
-            setIsWaitingForPluginApproval={setIsWaitingForPluginApproval}
-            setIsWaitingForPositionRouterApproval={setIsWaitingForPositionRouterApproval}
-            approveOrderBook={approveOrderBook}
-            approvePositionRouter={approvePositionRouter}
-            isPluginApproving={isPluginApproving}
-            isPositionRouterApproving={isPositionRouterApproving}
-            isWaitingForPluginApproval={isWaitingForPluginApproval}
-            isWaitingForPositionRouterApproval={isWaitingForPositionRouterApproval}
-            orderBookApproved={orderBookApproved}
-            positionRouterApproved={positionRouterApproved}
-            orders={orders}
-            flagOrdersEnabled={flagOrdersEnabled}
-            chainId={chainId}
-            infoTokens={infoTokens}
-            active={active}
-            connectWallet={connectWallet}
-            library={library}
-            account={account}
-            positionsMap={positionsMap}
-            fromTokenAddress={fromTokenAddress}
-            setFromTokenAddress={setFromTokenAddress}
-            toTokenAddress={toTokenAddress}
-            setToTokenAddress={setToTokenAddress}
-            swapOption={swapOption}
-            setSwapOption={setSwapOption}
-            pendingTxns={pendingTxns}
-            setPendingTxns={setPendingTxns}
-            tokenSelection={tokenSelection}
-            setTokenSelection={setTokenSelection}
-            isConfirming={isConfirming}
-            setIsConfirming={setIsConfirming}
-            isPendingConfirmation={isPendingConfirmation}
-            setIsPendingConfirmation={setIsPendingConfirmation}
-            savedIsPnlInLeverage={savedIsPnlInLeverage}
-            setSavedIsPnlInLeverage={setSavedIsPnlInLeverage}
-            nativeTokenAddress={nativeTokenAddress}
-            savedSlippageAmount={savedSlippageAmount}
-            totalTokenWeights={totalTokenWeights}
-            usdgSupply={usdgSupply}
-            savedShouldDisableValidationForTesting={savedShouldDisableValidationForTesting}
-            minExecutionFee={minExecutionFee}
-            minExecutionFeeUSD={minExecutionFeeUSD}
-            minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
-          />
-          <div className="Exchange-wallet-tokens">
-            <div className="Exchange-wallet-tokens-content">
-              <ExchangeWalletTokens tokens={tokens} infoTokens={infoTokens} onSelectToken={onSelectWalletToken} />
+    <div className="Exchange">
+      <div className="page-layout">
+        {showBanner && <ExchangeBanner hideBanner={hideBanner} />}
+
+        <ExchangeLinks />
+
+        <div className="Exchange-content">
+          <div className="Exchange-left">
+            {renderChart()}
+            <div className="Exchange-lists large">{getListSection()}</div>
+          </div>
+          <div className="Exchange-right">
+            <SwapBox
+              pendingPositions={pendingPositions}
+              setPendingPositions={setPendingPositions}
+              setIsWaitingForPluginApproval={setIsWaitingForPluginApproval}
+              setIsWaitingForPositionRouterApproval={setIsWaitingForPositionRouterApproval}
+              approveOrderBook={approveOrderBook}
+              approvePositionRouter={approvePositionRouter}
+              isPluginApproving={isPluginApproving}
+              isPositionRouterApproving={isPositionRouterApproving}
+              isWaitingForPluginApproval={isWaitingForPluginApproval}
+              isWaitingForPositionRouterApproval={isWaitingForPositionRouterApproval}
+              orderBookApproved={orderBookApproved}
+              positionRouterApproved={positionRouterApproved}
+              orders={orders}
+              flagOrdersEnabled={flagOrdersEnabled}
+              chainId={chainId}
+              infoTokens={infoTokens}
+              active={active}
+              connectWallet={connectWallet}
+              library={library}
+              account={account}
+              positionsMap={positionsMap}
+              fromTokenAddress={fromTokenAddress}
+              setFromTokenAddress={setFromTokenAddress}
+              toTokenAddress={toTokenAddress}
+              setToTokenAddress={setToTokenAddress}
+              swapOption={swapOption}
+              setSwapOption={setSwapOption}
+              pendingTxns={pendingTxns}
+              setPendingTxns={setPendingTxns}
+              tokenSelection={tokenSelection}
+              setTokenSelection={setTokenSelection}
+              isConfirming={isConfirming}
+              setIsConfirming={setIsConfirming}
+              isPendingConfirmation={isPendingConfirmation}
+              setIsPendingConfirmation={setIsPendingConfirmation}
+              savedIsPnlInLeverage={savedIsPnlInLeverage}
+              setSavedIsPnlInLeverage={setSavedIsPnlInLeverage}
+              nativeTokenAddress={nativeTokenAddress}
+              savedSlippageAmount={savedSlippageAmount}
+              totalTokenWeights={totalTokenWeights}
+              usdgSupply={usdgSupply}
+              savedShouldDisableValidationForTesting={savedShouldDisableValidationForTesting}
+              minExecutionFee={minExecutionFee}
+              minExecutionFeeUSD={minExecutionFeeUSD}
+              minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
+            />
+            <div className="Exchange-wallet-tokens">
+              <div className="Exchange-wallet-tokens-content">
+                <ExchangeWalletTokens tokens={tokens} infoTokens={infoTokens} onSelectToken={onSelectWalletToken} />
+              </div>
             </div>
           </div>
+          <div className="Exchange-lists small">{getListSection()}</div>
         </div>
-        <div className="Exchange-lists small">{getListSection()}</div>
+        {/* <Footer /> */}
       </div>
-      <Footer />
     </div>
   );
 });

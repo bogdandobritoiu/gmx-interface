@@ -456,9 +456,6 @@ function FullApp() {
           {!isHome && (
             <Switch>
               <Route exact path="/">
-                <Redirect to="/dashboard" />
-              </Route>
-              <Route exact path="/trade">
                 <Exchange
                   ref={exchangeRef}
                   savedShowPnlAfterFees={savedShowPnlAfterFees}
@@ -473,8 +470,12 @@ function FullApp() {
                   savedShouldDisableValidationForTesting={savedShouldDisableValidationForTesting}
                 />
               </Route>
+              <Route exact path="/trade">
+                <Redirect to="/" />
+              </Route>
               <Route exact path="/dashboard">
-                <Dashboard />
+                <Redirect to="/" />
+                {/* <Dashboard /> */}
               </Route>
               <Route exact path="/earn">
                 <Stake setPendingTxns={setPendingTxns} connectWallet={connectWallet} />

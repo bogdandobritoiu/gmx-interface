@@ -7,7 +7,7 @@ body,
   padding: 0;
   color: white;
   font-size: 10px;
-  background-color: #101124;
+  background-color: #070C0B;
 }
 
 body {
@@ -58,13 +58,14 @@ input {
 }
 
 :root {
-  --dark-blue: #17182c;
-  --dark-blue-bg: #16182e;
+  --primary: #7000FF;
+  --dark-blue: #211D27;
+  --dark-blue-bg: #070C0B;
   --dark-blue-accent: #a0a3c4;
-  --dark-blue-hover: #808aff14;
+  --dark-blue-hover: #FFFFFF14;
   --dark-blue-border: #ffffff29;
   --dark-blue-active: #818cef33;
-  --avax-red: #e84143;
+  --avax-red: #D15A52;
   --arbitrum-blue: #28a0f0;
   --border-radius-sm: 0.4rem;
   --error-red: #fa3c58;
@@ -382,11 +383,16 @@ button.btn-link:hover .logout-icon {
 }
 
 .page-layout {
-  min-height: calc(100vh - 62px);
+  position: relative;
+  max-width: 155rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 85px);
   display: flex;
   flex-direction: column;
-  padding-bottom: calc(4.65rem + 20rem);
-  padding-top: 4.65rem;
+  padding-top: 2.5rem;
+  background: #070C0B;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
 }
 
 .d-flex {

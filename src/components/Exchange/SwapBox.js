@@ -2016,30 +2016,31 @@ export default function SwapBox(props) {
         )}
         {(isLong || isShort) && !isStopOrder && (
           <div className="Exchange-leverage-box">
-            <div className="Exchange-leverage-slider-settings">
+            {/* <div className="Exchange-leverage-slider-settings">
               <Checkbox isChecked={isLeverageSliderEnabled} setIsChecked={setIsLeverageSliderEnabled}>
                 <span className="muted">Leverage slider</span>
               </Checkbox>
+            </div> */}
+            {/* {isLeverageSliderEnabled && ( */}
+            <span className="muted">Leverage slider</span>
+            <div
+              className={cx("Exchange-leverage-slider", "App-slider", {
+                positive: isLong,
+                negative: isShort,
+              })}
+            >
+              <Slider
+                min={1}
+                max={30}
+                step={0.1}
+                marks={leverageMarks}
+                handle={leverageSliderHandle}
+                onChange={(value) => setLeverageOption(value)}
+                value={leverageOption}
+                defaultValue={leverageOption}
+              />
             </div>
-            {isLeverageSliderEnabled && (
-              <div
-                className={cx("Exchange-leverage-slider", "App-slider", {
-                  positive: isLong,
-                  negative: isShort,
-                })}
-              >
-                <Slider
-                  min={1.1}
-                  max={30.5}
-                  step={0.1}
-                  marks={leverageMarks}
-                  handle={leverageSliderHandle}
-                  onChange={(value) => setLeverageOption(value)}
-                  value={leverageOption}
-                  defaultValue={leverageOption}
-                />
-              </div>
-            )}
+            {/* )} */}
             {isShort && (
               <div className="Exchange-info-row">
                 <div className="Exchange-info-label">
@@ -2251,7 +2252,7 @@ export default function SwapBox(props) {
           )}
         </div>
       )}
-      {(isLong || isShort) && (
+      {/* {(isLong || isShort) && (
         <div className="Exchange-swap-market-box App-box App-box-border">
           <div className="Exchange-swap-market-box-title">
             {isLong ? "Long" : "Short"}&nbsp;{toToken.symbol}
@@ -2390,8 +2391,8 @@ export default function SwapBox(props) {
             </div>
           )}
         </div>
-      )}
-      <div className="Exchange-swap-market-box App-box App-box-border">
+      )} */}
+      {/* <div className="Exchange-swap-market-box App-box App-box-border">
         <div className="Exchange-swap-market-box-title">
           <Trans>Useful Links</Trans>
         </div>
@@ -2417,7 +2418,7 @@ export default function SwapBox(props) {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <NoLiquidityErrorModal
         chainId={chainId}
         fromToken={fromToken}
@@ -2429,52 +2430,52 @@ export default function SwapBox(props) {
         setModalError={setModalError}
       />
       {renderOrdersToa()}
-      {isConfirming && (
-        <ConfirmationBox
-          library={library}
-          isHigherSlippageAllowed={isHigherSlippageAllowed}
-          setIsHigherSlippageAllowed={setIsHigherSlippageAllowed}
-          orders={orders}
-          isSwap={isSwap}
-          isLong={isLong}
-          isMarketOrder={isMarketOrder}
-          orderOption={orderOption}
-          isShort={isShort}
-          fromToken={fromToken}
-          fromTokenInfo={fromTokenInfo}
-          toToken={toToken}
-          toTokenInfo={toTokenInfo}
-          toAmount={toAmount}
-          fromAmount={fromAmount}
-          feeBps={feeBps}
-          onConfirmationClick={onConfirmationClick}
-          setIsConfirming={setIsConfirming}
-          hasExistingPosition={hasExistingPosition}
-          shortCollateralAddress={shortCollateralAddress}
-          shortCollateralToken={shortCollateralToken}
-          leverage={leverage}
-          existingPosition={existingPosition}
-          existingLiquidationPrice={existingLiquidationPrice}
-          displayLiquidationPrice={displayLiquidationPrice}
-          nextAveragePrice={nextAveragePrice}
-          triggerPriceUsd={triggerPriceUsd}
-          triggerRatio={triggerRatio}
-          fees={fees}
-          feesUsd={feesUsd}
-          isSubmitting={isSubmitting}
-          isPendingConfirmation={isPendingConfirmation}
-          fromUsdMin={fromUsdMin}
-          toUsdMax={toUsdMax}
-          collateralTokenAddress={collateralTokenAddress}
-          infoTokens={infoTokens}
-          chainId={chainId}
-          setPendingTxns={setPendingTxns}
-          pendingTxns={pendingTxns}
-          minExecutionFee={minExecutionFee}
-          minExecutionFeeUSD={minExecutionFeeUSD}
-          minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
-        />
-      )}
+      {/* {isConfirming && ( */}
+      <ConfirmationBox
+        library={library}
+        isHigherSlippageAllowed={isHigherSlippageAllowed}
+        setIsHigherSlippageAllowed={setIsHigherSlippageAllowed}
+        orders={orders}
+        isSwap={isSwap}
+        isLong={isLong}
+        isMarketOrder={isMarketOrder}
+        orderOption={orderOption}
+        isShort={isShort}
+        fromToken={fromToken}
+        fromTokenInfo={fromTokenInfo}
+        toToken={toToken}
+        toTokenInfo={toTokenInfo}
+        toAmount={toAmount}
+        fromAmount={fromAmount}
+        feeBps={feeBps}
+        onConfirmationClick={onConfirmationClick}
+        setIsConfirming={setIsConfirming}
+        hasExistingPosition={hasExistingPosition}
+        shortCollateralAddress={shortCollateralAddress}
+        shortCollateralToken={shortCollateralToken}
+        leverage={leverage}
+        existingPosition={existingPosition}
+        existingLiquidationPrice={existingLiquidationPrice}
+        displayLiquidationPrice={displayLiquidationPrice}
+        nextAveragePrice={nextAveragePrice}
+        triggerPriceUsd={triggerPriceUsd}
+        triggerRatio={triggerRatio}
+        fees={fees}
+        feesUsd={feesUsd}
+        isSubmitting={isSubmitting}
+        isPendingConfirmation={isPendingConfirmation}
+        fromUsdMin={fromUsdMin}
+        toUsdMax={toUsdMax}
+        collateralTokenAddress={collateralTokenAddress}
+        infoTokens={infoTokens}
+        chainId={chainId}
+        setPendingTxns={setPendingTxns}
+        pendingTxns={pendingTxns}
+        minExecutionFee={minExecutionFee}
+        minExecutionFeeUSD={minExecutionFeeUSD}
+        minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
+      />
+      {/* )} */}
     </div>
   );
 }

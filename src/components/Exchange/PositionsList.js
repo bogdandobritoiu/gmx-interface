@@ -461,7 +461,7 @@ export default function PositionsList(props) {
       )}
       <table className="Exchange-list large App-box">
         <tbody>
-          <tr className="Exchange-list-header">
+          {/* <tr className="Exchange-list-header">
             <th>
               <Trans>Position</Trans>
             </th>
@@ -485,7 +485,11 @@ export default function PositionsList(props) {
             </th>
             <th></th>
             <th></th>
+          </tr> */}
+          <tr>
+            <td className="Exchange-title">Your positions</td>
           </tr>
+
           {positions.length === 0 && positionsDataIsLoading && (
             <tr>
               <td colSpan="15">

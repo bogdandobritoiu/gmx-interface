@@ -8,7 +8,7 @@
 }
 
 .App-header.large {
-  height: 6.2rem;
+  height: 8.5rem;
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: space-between;
@@ -20,13 +20,13 @@
 }
 
 .App-header.large::after {
-  height: 1.3rem;
+  /* height: 1.3rem;
   width: 100%;
   content: " ";
   background: transparent linear-gradient(180deg, #00000030 0%, #00000000 100%) 0% 0% no-repeat padding-box;
   position: absolute;
   bottom: -1.3rem;
-  left: 0;
+  left: 0; */
 }
 
 .App-header.large .App-header-links {
@@ -278,13 +278,13 @@
   }
 
   .App-header.small::after {
-    height: 1.3rem;
+    /* height: 1.3rem;
     width: 100%;
     content: " ";
     background: transparent linear-gradient(180deg, #00000030 0%, #00000000 100%) 0% 0% no-repeat padding-box;
     position: absolute;
     bottom: -1.3rem;
-    left: 0;
+    left: 0; */
   }
 
   a.App-header-user-account {

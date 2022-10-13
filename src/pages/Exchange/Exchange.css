@@ -1,8 +1,9 @@
 .Exchange {
-  max-width: 155rem;
   margin: auto;
   justify-content: space-between;
+  background: var(--primary);
 }
+
 
 .Exchange-trigger-order-info,
 .Exchange-trigger-order-info a {
@@ -50,10 +51,9 @@
 .Exchange-content {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-gap: 1.5rem;
-  padding: 3.1rem;
+  grid-gap: 3rem;
+  padding: 3rem;
   padding-top: 0rem;
-  margin-top: -1.5rem;
 }
 
 .Exchange-position-list-orders {
@@ -135,7 +135,7 @@
 }
 
 .Exchange-leverage-slider {
-  margin-top: 1.5rem;
+  /* margin-top: 0rem; */
   margin-bottom: 3.4rem;
   padding: 0 0.8rem;
 }
@@ -478,8 +478,7 @@ table.Exchange-list th,
 table.Exchange-list td {
   font-weight: normal;
   text-align: left;
-  padding: 1.05rem;
-  padding-left: 1.5rem;
+  padding: 2rem;
 }
 table.Exchange-list.Orders th,
 table.Exchange-list.Orders td {
@@ -487,8 +486,13 @@ table.Exchange-list.Orders td {
   padding-bottom: 1.4rem;
 }
 
+table.Exchange-list .Exchange-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
 table.Exchange-list tr {
-  border-bottom: 1px solid #23263b;
+  /* border-bottom: 1px solid #23263b; */
 }
 
 table.Exchange-list tr:last-child {
@@ -653,15 +657,20 @@ table.Exchange-list th {
 }
 
 .Exchange-swap-section {
-  padding: 1.5rem;
+  padding: 1.7rem;
   margin-bottom: 1.05rem;
-  border-radius: 0.3rem;
-  background: linear-gradient(90deg, rgba(30, 34, 61, 0.9) 0%, rgba(38, 43, 71, 0.9) 100%);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255, 0.1);
+  background: var(--dark-blue);
   box-shadow: inset 0px 0px 3rem 0.5rem rgba(255, 255, 255, 0.01);
 }
 
 .Exchange-swap-option-tabs.Tab.block .Tab-option {
   padding: 1.05rem;
+}
+
+.Exchange-swap-option-tabs.Tab.block .Tab-option.active {
+  background: var(--avax-red);
 }
 
 .Exchange-swap-order-type-tabs {
@@ -770,7 +779,7 @@ input.Exchange-swap-input.small {
   border-radius: 3.1rem;
   cursor: pointer;
   user-select: none;
-  background: linear-gradient(90deg, rgba(45, 66, 252, 1) 0%, rgba(46, 61, 205, 1) 100%);
+  background: var(--primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -846,11 +855,14 @@ table.Exchange-list-small td {
 }
 
 .Confirmation-box .Modal-content {
-  width: 36rem;
+  width: 100%;
 }
 
 .Confirmation-box-row {
   margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .Confirmation-box-button {

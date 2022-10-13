@@ -1,0 +1,34 @@
+
+
+.Exchange-links-container {
+    display: flex;
+    padding-left: 3rem;
+    margin-top: -1.5rem;
+    padding-bottom: 2rem;
+}
+
+.Exchange-link {
+    cursor: pointer;
+    padding: 1.6rem;
+    position: relative;
+}
+
+.Exchange-link a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.Exchange-link.active:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    display: inline-block;
+    background: var(--primary);
+    border-radius: 1rem;
+    height: 0.7rem;
+    width: 100%;
+}

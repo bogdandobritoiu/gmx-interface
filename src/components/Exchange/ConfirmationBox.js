@@ -31,6 +31,7 @@ import { SLIPPAGE_BPS_KEY } from "config/localStorage";
 import { expandDecimals, formatAmount, formatAmountFree } from "lib/numbers";
 import { getNativeToken, getToken, getWrappedToken } from "config/tokens";
 import { formatDateTime, getTimeRemaining } from "lib/dates";
+import Button from "components/Common/Button";
 
 const HIGH_SPREAD_THRESHOLD = expandDecimals(1, USD_DECIMALS).div(100); // 1%;
 
@@ -879,13 +880,12 @@ export default function ConfirmationBox(props) {
         {isSwap && renderSwapSection()}
         {!isSwap && renderMarginSection()}
         <div className="Confirmation-box-row">
-          <button
-            onClick={onConfirmationClick}
-            className="App-cta Confirmation-box-button"
-            disabled={!isPrimaryEnabled()}
-          >
+          <Button onClick={onConfirmationClick} className="cancel">
+            Later
+          </Button>
+          <Button onClick={onConfirmationClick} className="primary" disabled={!isPrimaryEnabled()}>
             {getPrimaryText()}
-          </button>
+          </Button>
         </div>
       </Modal>
     </div>

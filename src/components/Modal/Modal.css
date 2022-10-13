@@ -25,23 +25,45 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .Modal-content {
   z-index: 20;
   position: relative;
-  max-width: 100%;
+  max-width: 520px;
+  /* max-width: 100%; */
   max-height: 90vh;
-  overflow: auto;
-  background: #16182e;
-  border-radius: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #151219;
+  border-radius: 2rem;
 }
 
+
+.Modal-image img {
+  /* height: 300px; */
+  width: 100%;
+}
+
+.Modal-image .Modal-close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: #151219;
+  border-radius: 100px;
+  height: 4.4rem;
+  width: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
 .divider {
   border-bottom: 1px solid #ffffff29;
   margin-bottom: 1.5rem;
-}
+} */
 
 .Modal.non-scrollable .Modal-content {
   overflow: visible;
@@ -51,10 +73,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 .Modal-body {
-  margin: 1.5rem;
+  margin: 4rem;
 }
 .Modal-body::-webkit-scrollbar {
   width: 0.6rem;
@@ -72,23 +95,23 @@
 
 .Modal-title {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 600;
   line-height: 1;
+  margin-top:6rem;
 }
+
 
 .Modal-close-button {
   text-align: right;
+  /* margin-right: -7px; */
 }
 
 .Modal-close-icon {
-  opacity: 0.6;
+  opacity: 1;
   cursor: pointer;
   text-align: right;
   display: inline-block;
-}
-
-.Modal-close-icon:hover {
-  opacity: 0.9;
 }
 
 .Modal-note {
