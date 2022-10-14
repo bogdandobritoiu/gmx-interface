@@ -589,7 +589,7 @@ function FullApp() {
       </Modal>
       <Modal
         className="App-settings"
-        isVisible={isSettingsVisible}
+        // isVisible={isSettingsVisible}
         setIsVisible={setIsSettingsVisible}
         label="Settings"
       >

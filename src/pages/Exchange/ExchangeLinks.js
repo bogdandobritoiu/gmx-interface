@@ -44,7 +44,9 @@ export const ExchangeLinks = () => {
           You'll be able to join one of our staking pools very soon. Stay up to date and get notified as soon as they're
           available.
           <div style={{ paddingTop: 40 }}>
-            <Button onClick={onNotify}>Notify me</Button>
+            <button className="App-cta" onClick={onNotify}>
+              Notify me
+            </button>
           </div>
         </div>
       </ComingSoonModal>
@@ -57,7 +59,9 @@ export const ExchangeLinks = () => {
         <div className="Coming-soon-modal-content">
           Swapping will be available soon. Stay tuned and get notified as soon as it’s available.
           <div style={{ paddingTop: 40 }}>
-            <Button onClick={onNotify}>Notify me</Button>
+            <button className="App-cta" onClick={onNotify}>
+              Notify me
+            </button>
           </div>
         </div>
       </ComingSoonModal>

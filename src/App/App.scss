@@ -783,26 +783,60 @@ button.App-connect-wallet:hover {
   text-align: center;
   cursor: pointer;
   display: inline-block;
-  padding: 1.5rem;
+  height: 4rem;
   border-radius: 0.3rem;
   border: none;
   font-size: 1.4rem;
+  
+}
+
+.Exchange-swap-button {
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(90deg, rgba(#7000FF, 0.9) 0%, rgba(#5903c9, 0.9) 100%);
+  border-radius: 100px;
+  transition: all 1000ms linear;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1.5rem;
+  border: none;
+  font-size: 1.5rem;
+  &:hover {
+    box-shadow: 0 0 0.4rem 0.6rem rgba(#7000FF, 0.2);
+  }
 }
 
 a.App-cta,
 button.App-cta {
   color: white;
   text-decoration: none;
-  background: linear-gradient(90deg, rgba(#7000FF, 0.9) 0%, rgba(#5903c9, 0.9) 100%);
-  border-radius: 100px;
-  transition: all 1000ms linear;
+  border-radius: 0.4rem;
+  transition: all 100ms linear;
+  background: var(--primary);
+  box-shadow: 0px 0px 0.5rem var(--primary);
+  border: none;
+  height: 40px;
+  font-weight: 600;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* box-shadow: 0 0 0.4rem 0.6rem rgba(45,66,252,0.15); */
 }
 
 a.App-cta:hover,
 button.App-cta:hover:enabled {
-  // background: linear-gradient(90deg, rgba(#5903c9, 0.9) 0%, rgba(#7000FF, 0.9) 100%);
-  box-shadow: 0 0 0.4rem 0.6rem rgba(#7000FF, 0.2);
+  background: darken(#7000FF, 0.2);
+  box-shadow: 0 0 0.5rem 0.2rem rgba(#7000FF, 0.7);
+}
+
+.App-cta.cancel {
+  background: var(--dark-blue);
+  box-shadow: none !important; 
+  &:hover {
+    background: rgba(255,255,255, 0.1) !important;
+  }
 }
 
 .App-cta.small {

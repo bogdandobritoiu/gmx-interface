@@ -2190,7 +2190,7 @@ export default function SwapBox(props) {
           </div>
         )}
         <div className="Exchange-swap-button-container">
-          <button className="App-cta Exchange-swap-button" onClick={onClickPrimary} disabled={!isPrimaryEnabled()}>
+          <button className="Exchange-swap-button" onClick={onClickPrimary} disabled={!isPrimaryEnabled()}>
             {getPrimaryText()}
           </button>
         </div>
@@ -2430,52 +2430,52 @@ export default function SwapBox(props) {
         setModalError={setModalError}
       />
       {renderOrdersToa()}
-      {/* {isConfirming && ( */}
-      <ConfirmationBox
-        library={library}
-        isHigherSlippageAllowed={isHigherSlippageAllowed}
-        setIsHigherSlippageAllowed={setIsHigherSlippageAllowed}
-        orders={orders}
-        isSwap={isSwap}
-        isLong={isLong}
-        isMarketOrder={isMarketOrder}
-        orderOption={orderOption}
-        isShort={isShort}
-        fromToken={fromToken}
-        fromTokenInfo={fromTokenInfo}
-        toToken={toToken}
-        toTokenInfo={toTokenInfo}
-        toAmount={toAmount}
-        fromAmount={fromAmount}
-        feeBps={feeBps}
-        onConfirmationClick={onConfirmationClick}
-        setIsConfirming={setIsConfirming}
-        hasExistingPosition={hasExistingPosition}
-        shortCollateralAddress={shortCollateralAddress}
-        shortCollateralToken={shortCollateralToken}
-        leverage={leverage}
-        existingPosition={existingPosition}
-        existingLiquidationPrice={existingLiquidationPrice}
-        displayLiquidationPrice={displayLiquidationPrice}
-        nextAveragePrice={nextAveragePrice}
-        triggerPriceUsd={triggerPriceUsd}
-        triggerRatio={triggerRatio}
-        fees={fees}
-        feesUsd={feesUsd}
-        isSubmitting={isSubmitting}
-        isPendingConfirmation={isPendingConfirmation}
-        fromUsdMin={fromUsdMin}
-        toUsdMax={toUsdMax}
-        collateralTokenAddress={collateralTokenAddress}
-        infoTokens={infoTokens}
-        chainId={chainId}
-        setPendingTxns={setPendingTxns}
-        pendingTxns={pendingTxns}
-        minExecutionFee={minExecutionFee}
-        minExecutionFeeUSD={minExecutionFeeUSD}
-        minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
-      />
-      {/* )} */}
+      {isConfirming && (
+        <ConfirmationBox
+          library={library}
+          isHigherSlippageAllowed={isHigherSlippageAllowed}
+          setIsHigherSlippageAllowed={setIsHigherSlippageAllowed}
+          orders={orders}
+          isSwap={isSwap}
+          isLong={isLong}
+          isMarketOrder={isMarketOrder}
+          orderOption={orderOption}
+          isShort={isShort}
+          fromToken={fromToken}
+          fromTokenInfo={fromTokenInfo}
+          toToken={toToken}
+          toTokenInfo={toTokenInfo}
+          toAmount={toAmount}
+          fromAmount={fromAmount}
+          feeBps={feeBps}
+          onConfirmationClick={onConfirmationClick}
+          setIsConfirming={setIsConfirming}
+          hasExistingPosition={hasExistingPosition}
+          shortCollateralAddress={shortCollateralAddress}
+          shortCollateralToken={shortCollateralToken}
+          leverage={leverage}
+          existingPosition={existingPosition}
+          existingLiquidationPrice={existingLiquidationPrice}
+          displayLiquidationPrice={displayLiquidationPrice}
+          nextAveragePrice={nextAveragePrice}
+          triggerPriceUsd={triggerPriceUsd}
+          triggerRatio={triggerRatio}
+          fees={fees}
+          feesUsd={feesUsd}
+          isSubmitting={isSubmitting}
+          isPendingConfirmation={isPendingConfirmation}
+          fromUsdMin={fromUsdMin}
+          toUsdMax={toUsdMax}
+          collateralTokenAddress={collateralTokenAddress}
+          infoTokens={infoTokens}
+          chainId={chainId}
+          setPendingTxns={setPendingTxns}
+          pendingTxns={pendingTxns}
+          minExecutionFee={minExecutionFee}
+          minExecutionFeeUSD={minExecutionFeeUSD}
+          minExecutionFeeErrorMessage={minExecutionFeeErrorMessage}
+        />
+      )}
     </div>
   );
 }

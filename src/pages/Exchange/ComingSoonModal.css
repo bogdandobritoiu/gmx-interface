@@ -6,21 +6,6 @@
     font-size: 1.4rem;
     font-weight: 600;
 }
-.Confirmation-box-row .btn-primary, .Coming-soon-modal-content .btn-primary {
-    background: var(--primary);
-    box-shadow: 0px 0px 0.5rem var(--primary);
-    border: none;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Confirmation-box-row .btn-primary.cancel , .Coming-soon-modal-content .btn-primary.cancel {
-    background: var(--dark-blue);
-    box-shadow: none;
-}
-
 
 .Confirmation-box-row .btn-label {
     margin-left: 0;

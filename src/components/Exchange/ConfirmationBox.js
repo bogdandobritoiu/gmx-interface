@@ -880,10 +880,10 @@ export default function ConfirmationBox(props) {
         {isSwap && renderSwapSection()}
         {!isSwap && renderMarginSection()}
         <div className="Confirmation-box-row">
-          <Button onClick={onConfirmationClick} className="cancel">
+          <Button className="App-cta cancel" onClick={onConfirmationClick}>
             Later
           </Button>
-          <Button onClick={onConfirmationClick} className="primary" disabled={!isPrimaryEnabled()}>
+          <Button onClick={onConfirmationClick} className="App-cta" disabled={!isPrimaryEnabled()}>
             {getPrimaryText()}
           </Button>
         </div>
